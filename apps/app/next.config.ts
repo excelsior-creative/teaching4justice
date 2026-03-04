@@ -26,6 +26,10 @@ const nextConfig: NextConfig = {
     formats: ["image/avif", "image/webp"],
     remotePatterns: [
       {
+        protocol: "https",
+        hostname: "teaching4justice.org",
+      },
+      {
         protocol: "http",
         hostname: "localhost",
       },

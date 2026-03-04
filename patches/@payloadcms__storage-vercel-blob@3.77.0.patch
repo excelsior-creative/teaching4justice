@@ -1,0 +1,21 @@
+diff --git a/dist/index.js b/dist/index.js
+index 8ff94e9cb0828bd146845e6465369155765cba3d..386f2d3220d8af9592d859f9ed16c427b1b64eac 100644
+--- a/dist/index.js
++++ b/dist/index.js
+@@ -12,12 +12,13 @@ const defaultUploadOptions = {
+     enabled: true
+ };
+ export const vercelBlobStorage = (options)=>(incomingConfig)=>{
+-        // Parse storeId from token
+-        const storeId = options.token?.match(/^vercel_blob_rw_([a-z\d]+)_[a-z\d]+$/i)?.[1]?.toLowerCase();
++        // Parse storeId from token - supports both legacy format and v2 encrypted format
++        const storeId = options.token?.match(/^vercel_blob_rw_([a-z\d]+)_[a-z\d]+$/i)?.[1]?.toLowerCase()
++            || process.env.VERCEL_BLOB_STORE_ID?.toLowerCase();
+         const isPluginDisabled = options.enabled === false || !options.token;
+         // Don't throw if the plugin is disabled
+         if (!storeId && !isPluginDisabled) {
+-            throw new Error('Invalid token format for Vercel Blob adapter. Should be vercel_blob_rw_<store_id>_<random_string>.');
++            throw new Error('Invalid token format for Vercel Blob adapter. Should be vercel_blob_rw_<store_id>_<random_string>. Alternatively set VERCEL_BLOB_STORE_ID env var.');
+         }
+         const optionsWithDefaults = {
+             ...defaultUploadOptions,

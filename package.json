@@ -15,5 +15,10 @@
     "turbo": "^2.3.3",
     "vercel": "^50.9.5"
   },
-  "packageManager": "pnpm@9.15.2"
+  "packageManager": "pnpm@9.15.2",
+  "pnpm": {
+    "patchedDependencies": {
+      "@payloadcms/storage-vercel-blob@3.77.0": "patches/@payloadcms__storage-vercel-blob@3.77.0.patch"
+    }
+  }
 }

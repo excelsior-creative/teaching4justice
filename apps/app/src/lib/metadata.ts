@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 
 export const SITE_URL = process.env.NEXT_PUBLIC_SERVER_URL || "http://localhost:3000";
-export const SITE_NAME = "Template Site";
-export const SITE_TAGLINE = "Built with Next.js & Payload CMS";
+export const SITE_NAME = "Teaching for Justice";
+export const SITE_TAGLINE = "About to Be Amazing";
 export const DEFAULT_DESCRIPTION =
-  "A high-performance project template with integrated SEO and AI features.";
+  "Teaching for Justice – empowering educators and students to build a more equitable world.";
 
 export const DEFAULT_OG_IMAGE = "/og-image.jpg";
 

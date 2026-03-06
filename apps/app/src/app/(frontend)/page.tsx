@@ -26,7 +26,8 @@ export default function Home() {
 
   return (
     <div className="flex flex-col">
-      <Section className="relative overflow-hidden">
+      {/* Hero Section - fills remaining viewport after nav (64px mobile, 80px desktop) */}
+      <Section className="relative overflow-hidden min-h-[calc(100vh-4rem)] md:min-h-[calc(100vh-5rem)] flex flex-col">
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -34,7 +35,7 @@ export default function Home() {
         />
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-black/50" />
-        <Container className="relative z-10 pt-10 md:pt-16 pb-16 md:pb-24">
+        <Container className="relative z-10 flex-1 flex items-center justify-center py-10 md:py-16">
           <div className="max-w-4xl mx-auto text-center">
             <SectionReveal delay={0}>
               <h1 className="relative mb-6">
@@ -62,7 +63,7 @@ export default function Home() {
           </div>
         </Container>
         <div
-          className="absolute inset-0 opacity-10 animate-float-slow"
+          className="absolute inset-0 opacity-10 animate-float-slow pointer-events-none"
           style={{
             backgroundImage:
               "radial-gradient(circle, rgba(242,125,32,0.4) 2px, transparent 2px), radial-gradient(circle, rgba(232,50,120,0.4) 2px, transparent 2px)",

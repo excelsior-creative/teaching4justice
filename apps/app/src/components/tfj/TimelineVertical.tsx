@@ -8,8 +8,20 @@ import type { TimelineEntry } from "@/content/tfj/home";
 
 export const TimelineVertical = ({ entries }: { entries: TimelineEntry[] }) => {
   return (
-    <Section>
-      <Container>
+    <Section className="relative overflow-hidden">
+      {/* Gradient background */}
+      <div className="absolute inset-0 bg-gradient-sunset-subtle" />
+      {/* Dot texture overlay */}
+      <div
+        className="absolute inset-0 opacity-10 animate-float-slow"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle, rgba(242,125,32,0.4) 2px, transparent 2px), radial-gradient(circle, rgba(232,50,120,0.4) 2px, transparent 2px)",
+          backgroundSize: "40px 40px",
+          backgroundPosition: "0 0, 20px 20px",
+        }}
+      />
+      <Container className="relative z-10">
         <SectionHeading subtitle="Our Journey">Our Story So Far</SectionHeading>
         <div className="max-w-3xl mx-auto">
           <div className="relative">

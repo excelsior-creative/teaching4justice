@@ -6,6 +6,8 @@ export interface HeroSection {
 
 export interface StorySection {
   paragraphs: string[];
+  imageUrl: string;
+  imageAlt: string;
 }
 
 export interface Value {
@@ -61,6 +63,8 @@ export const homeContent: HomePageContent = {
       "Our journey has been guided by the belief that education is a powerful tool for social change. Through conferences, workshops, and collaborative resources, we've created spaces where educators can learn, share, and grow together.",
       "Today, Teaching for Justice continues to evolve, bringing together diverse voices and perspectives to create educational experiences that honor the complexity of AAPI experiences while building pathways for meaningful dialogue and action in classrooms across the country.",
     ],
+    imageUrl: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80",
+    imageAlt: "Diverse group of educators collaborating together",
   },
   values: [
     {
@@ -188,12 +192,12 @@ export const homeContent: HomePageContent = {
     },
   ],
   gallery: [
-    { alt: "Conference participants in discussion", src: "/tfj/placeholder.svg" },
-    { alt: "Workshop session in progress", src: "/tfj/placeholder.svg" },
-    { alt: "Community gathering", src: "/tfj/placeholder.svg" },
-    { alt: "Educators collaborating", src: "/tfj/placeholder.svg" },
-    { alt: "Keynote presentation", src: "/tfj/placeholder.svg" },
-    { alt: "Group photo", src: "/tfj/placeholder.svg" },
+    { alt: "Conference participants in discussion", src: "/tfj/gallery/gallery-1.jpg" },
+    { alt: "Workshop session in progress", src: "/tfj/gallery/gallery-2.jpg" },
+    { alt: "Community gathering", src: "/tfj/gallery/gallery-3.jpg" },
+    { alt: "Educators collaborating", src: "/tfj/gallery/gallery-4.jpg" },
+    { alt: "Keynote presentation", src: "/tfj/gallery/gallery-5.jpg" },
+    { alt: "Group photo", src: "/tfj/gallery/gallery-6.jpg" },
   ],
   quoteBanner: {
     quote: "Education is either for domestication or for freedom. There is no neutral education.",

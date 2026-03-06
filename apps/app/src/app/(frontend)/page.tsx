@@ -75,16 +75,27 @@ export default function Home() {
       <Section variant="muted">
         <Container>
           <SectionHeading subtitle="Our Story">About Us</SectionHeading>
-          <div className="max-w-3xl mx-auto space-y-6">
-            {story.paragraphs.map((paragraph, index) => (
-              <SectionReveal key={index} delay={index * 50}>
-                <p
-                  className="text-lg text-foreground leading-relaxed"
-                >
-                  {paragraph}
-                </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="max-w-2xl space-y-6">
+              {story.paragraphs.map((paragraph, index) => (
+                <SectionReveal key={index} delay={index * 50}>
+                  <p className="text-lg text-foreground leading-relaxed">
+                    {paragraph}
+                  </p>
+                </SectionReveal>
+              ))}
+            </div>
+            <div className="relative aspect-[4/3] w-full">
+              <SectionReveal delay={150}>
+                <Image
+                  src={story.imageUrl}
+                  alt={story.imageAlt}
+                  fill
+                  className="object-cover rounded-2xl shadow-lg"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
               </SectionReveal>
-            ))}
+            </div>
           </div>
         </Container>
       </Section>

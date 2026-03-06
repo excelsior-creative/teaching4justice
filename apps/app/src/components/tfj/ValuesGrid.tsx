@@ -14,7 +14,7 @@ export const ValuesGrid = ({ values }: { values: Value[] }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {values.map((value, index) => (
             <SectionReveal key={index} delay={index * 80}>
-              <Card hover={true}>
+              <Card hover={true} className="h-full">
                 <h3 className="text-xl font-bold text-t4j-purple mb-2 font-heading">
                   {value.title}
                 </h3>

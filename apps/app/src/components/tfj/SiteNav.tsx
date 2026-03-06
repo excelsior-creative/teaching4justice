@@ -21,7 +21,7 @@ export const SiteNav = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link
             href="/"
-            className="flex items-center h-12 md:h-14 hover:opacity-80 transition-opacity"
+            className="flex items-center h-16 md:h-20 hover:opacity-80 transition-opacity"
             aria-label="Teaching for Justice"
           >
             <Image

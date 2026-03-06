@@ -26,7 +26,14 @@ export default function Home() {
 
   return (
     <div className="flex flex-col">
-      <Section className="bg-gradient-sunset-subtle relative overflow-hidden">
+      <Section className="relative overflow-hidden">
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/hero-background.jpg')" }}
+        />
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-black/50" />
         <Container className="relative z-10 pt-10 md:pt-16 pb-16 md:pb-24">
           <div className="max-w-4xl mx-auto text-center">
             <SectionReveal delay={0}>
@@ -43,7 +50,7 @@ export default function Home() {
               </h1>
             </SectionReveal>
             <SectionReveal delay={100}>
-              <p className="text-xl md:text-2xl text-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-xl md:text-2xl text-white mb-10 max-w-2xl mx-auto leading-relaxed">
                 {hero.tagline}
               </p>
             </SectionReveal>

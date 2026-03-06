@@ -29,7 +29,7 @@ export const SiteNav = () => {
               alt="Teaching for Justice"
               width={500}
               height={374}
-              className="h-full w-auto"
+              className="h-full w-auto pt-2.5 pb-2.5"
               priority
             />
           </Link>

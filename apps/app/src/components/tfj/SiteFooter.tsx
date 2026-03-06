@@ -21,7 +21,7 @@ export const SiteFooter = () => {
             <div>
               <Link
                 href="/"
-                className="mb-4 inline-block h-16 w-auto hover:opacity-80 transition-opacity"
+                className="mb-4 inline-block h-20 w-auto hover:opacity-80 transition-opacity"
                 aria-label="Teaching for Justice"
               >
                 <Image
@@ -29,7 +29,7 @@ export const SiteFooter = () => {
                   alt="Teaching for Justice"
                   width={500}
                   height={374}
-                  className="h-16 w-auto"
+                  className="h-20 w-auto"
                 />
               </Link>
               <p className="text-sm text-muted-foreground max-w-sm">
@@ -86,7 +86,15 @@ export const SiteFooter = () => {
               © {currentYear} Teaching for Justice. All rights reserved.
             </p>
             <p className="text-sm text-muted-foreground">
-              Site by Excelsior Creative
+              Site by{" "}
+              <a
+                href="https://excelsiorcreative.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-t4j-orange transition-colors"
+              >
+                Excelsior Creative
+              </a>
             </p>
           </div>
         </div>

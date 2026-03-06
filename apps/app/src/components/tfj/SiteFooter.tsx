@@ -21,7 +21,7 @@ export const SiteFooter = () => {
             <div>
               <Link
                 href="/"
-                className="mb-4 inline-block h-12 w-auto hover:opacity-80 transition-opacity"
+                className="mb-4 inline-block h-16 w-auto hover:opacity-80 transition-opacity"
                 aria-label="Teaching for Justice"
               >
                 <Image
@@ -29,7 +29,7 @@ export const SiteFooter = () => {
                   alt="Teaching for Justice"
                   width={500}
                   height={374}
-                  className="h-12 w-auto"
+                  className="h-16 w-auto"
                 />
               </Link>
               <p className="text-sm text-muted-foreground max-w-sm">

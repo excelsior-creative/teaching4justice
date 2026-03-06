@@ -13,9 +13,9 @@ export function generateOrganizationSchema() {
     url: SITE_URL,
     logo: {
       "@type": "ImageObject",
-      url: `${SITE_URL}/logo.svg`,
-      width: 512,
-      height: 512,
+      url: `${SITE_URL}/tfj-logo-orange-500x374.png`,
+      width: 500,
+      height: 374,
     },
     description: DEFAULT_DESCRIPTION,
   };

@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 
 export const SITE_URL = process.env.NEXT_PUBLIC_SERVER_URL || "http://localhost:3000";
 export const SITE_NAME = "Teaching for Justice";
-export const SITE_TAGLINE = "About to Be Amazing";
+export const SITE_TAGLINE = "Communities of Care";
 export const DEFAULT_DESCRIPTION =
-  "Teaching for Justice – empowering educators and students to build a more equitable world.";
+  "A grassroots, educator-led conference organization focused on AAPI-centered K-12 education. Join us for Communities of Care 2026.";
 
-export const DEFAULT_OG_IMAGE = "/og-image.jpg";
+export const DEFAULT_OG_IMAGE = "/og-image.svg";
 
 /**
  * Default metadata for the entire site
@@ -19,11 +19,14 @@ export const defaultMetadata: Metadata = {
   },
   description: DEFAULT_DESCRIPTION,
   keywords: [
-    "Next.js",
-    "Payload CMS",
-    "React",
-    "Tailwind CSS",
-    "SEO optimized",
+    "AAPI education",
+    "K-12 teaching",
+    "social justice education",
+    "educator conference",
+    "Communities of Care",
+    "Teaching for Justice",
+    "anti-racist teaching",
+    "culturally responsive teaching",
   ],
   authors: [{ name: SITE_NAME, url: SITE_URL }],
   creator: SITE_NAME,

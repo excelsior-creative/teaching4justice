@@ -1,17 +1,19 @@
 import React from "react";
 import { Providers } from "@/components/Providers";
+import { SiteNav } from "@/components/tfj/SiteNav";
+import { SiteFooter } from "@/components/tfj/SiteFooter";
 
 /**
  * Frontend layout.
- * The homepage is a coming-soon full-screen page so we intentionally
- * omit the Navbar/Footer wrappers here. Inner pages can add them back
- * as needed via their own layouts.
+ * Wraps all frontend pages with TFJ SiteNav and SiteFooter.
  */
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex min-h-screen flex-col" data-theme="frontend">
       <Providers>
+        <SiteNav />
         <main className="flex-grow">{children}</main>
+        <SiteFooter />
       </Providers>
     </div>
   );

@@ -1,87 +1,131 @@
-import React from "react";
 import type { Metadata } from "next";
 import Image from "next/image";
+import { Container } from "@/components/Container";
+import { SectionHeading } from "@/components/tfj/SectionHeading";
+import { PillButton } from "@/components/tfj/PillButton";
+import { QuoteBanner } from "@/components/tfj/QuoteBanner";
+import { ValuesGrid } from "@/components/tfj/ValuesGrid";
+import { TimelineVertical } from "@/components/tfj/TimelineVertical";
+import { ApproachCards } from "@/components/tfj/ApproachCards";
+import { Testimonials } from "@/components/tfj/Testimonials";
+import { GalleryGrid } from "@/components/tfj/GalleryGrid";
+import { Section } from "@/components/tfj/Section";
+import { SectionReveal } from "@/components/SectionReveal";
+import { homeContent } from "@/content/tfj/home";
 
 export const metadata: Metadata = {
-  title: "Teaching for Justice – About to Be Amazing",
-  description:
-    "We are currently making some improvements to our website. Stay tuned!",
+  title: "Home",
+  description: "Teaching for Justice – empowering educators to build a more equitable world through AAPI-centered K-12 education.",
 };
 
 export const dynamic = "force-static";
 
 export default function Home() {
-  const notifyEmail = "info@teaching4justice.org";
+  const { hero, story, values, timeline, approach, testimonials, gallery, quoteBanner } =
+    homeContent;
 
   return (
-    <main
-      className="relative flex min-h-screen flex-col items-center justify-around gap-5 px-4 py-12 text-center"
-      style={{ backgroundColor: "#5B2AE8" }}
-    >
-      {/* Background image with subtle overlay */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 z-0"
-        style={{
-          backgroundImage:
-            "url('https://teaching4justice.org/wp-content/uploads/2026/02/TFJ-comingsoon-bg.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          opacity: 0.08,
-        }}
+    <div className="flex flex-col">
+      <Section className="relative overflow-hidden">
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/hero-background.jpg')" }}
+        />
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-black/50" />
+        <Container className="relative z-10 pt-10 md:pt-16 pb-16 md:pb-24">
+          <div className="max-w-4xl mx-auto text-center">
+            <SectionReveal delay={0}>
+              <h1 className="relative mb-6">
+                <span className="sr-only">Teaching for Justice</span>
+                <Image
+                  src="/TFJ-home-hero-pink.png"
+                  alt=""
+                  width={800}
+                  height={200}
+                  priority
+                  className="w-full max-w-2xl mx-auto h-auto"
+                />
+              </h1>
+            </SectionReveal>
+            <SectionReveal delay={100}>
+              <p className="text-xl md:text-2xl text-white mb-10 max-w-2xl mx-auto leading-relaxed">
+                {hero.tagline}
+              </p>
+            </SectionReveal>
+            <SectionReveal delay={200}>
+              <PillButton href={hero.ctaLink} variant="primary" className="text-lg px-10 py-4">
+                {hero.ctaText}
+              </PillButton>
+            </SectionReveal>
+          </div>
+        </Container>
+        <div
+          className="absolute inset-0 opacity-10 animate-float-slow"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle, rgba(242,125,32,0.4) 2px, transparent 2px), radial-gradient(circle, rgba(232,50,120,0.4) 2px, transparent 2px)",
+            backgroundSize: "40px 40px",
+            backgroundPosition: "0 0, 20px 20px",
+          }}
+        />
+      </Section>
+
+      <Section variant="muted">
+        <Container>
+          <SectionHeading subtitle="Our Story">About Us</SectionHeading>
+          <div className="max-w-3xl mx-auto space-y-6">
+            {story.paragraphs.map((paragraph, index) => (
+              <SectionReveal key={index} delay={index * 50}>
+                <p
+                  className="text-lg text-foreground leading-relaxed"
+                >
+                  {paragraph}
+                </p>
+              </SectionReveal>
+            ))}
+          </div>
+        </Container>
+      </Section>
+
+      <QuoteBanner
+        quote={quoteBanner.quote}
+        author={quoteBanner.author}
       />
 
-      {/* Content */}
-      <div className="relative z-10 flex flex-col items-center gap-8 max-w-2xl mx-auto">
-        {/* Logo */}
-        <div className="w-full max-w-[320px] sm:max-w-[400px]">
-          <Image
-            src="https://teaching4justice.org/wp-content/uploads/2026/02/TFJ-Logo-orange-500x374-1.png"
-            alt="Teaching for Justice"
-            width={500}
-            height={374}
-            priority
-            className="w-full h-auto"
-          />
-        </div>
+      <ValuesGrid values={values} />
 
-        {/* Heading */}
-        <h1
-          className="text-white font-medium"
-          style={{
-            fontFamily: "var(--font-pacifico), cursive",
-            fontSize: "clamp(3rem, 8vw, 7rem)",
-            lineHeight: 1.1,
-          }}
-        >
-          Launching soon!
-        </h1>
+      <TimelineVertical entries={timeline} />
 
-        {/* Subtext */}
-        <p
-          className="text-white max-w-md leading-relaxed"
-          style={{ fontSize: "1.25rem" }}
-        >
-          We are currently making some improvements to our website!
-        </p>
+      <ApproachCards cards={approach} />
 
-        {/* CTA Button */}
-        <a
-          href={`mailto:${notifyEmail}`}
-          className="inline-block font-bold text-white transition-all hover:brightness-110 active:scale-95"
-          style={{
-            backgroundColor: "#F27D20",
-            borderRadius: "50rem",
-            padding: "0.875rem 4rem",
-            fontSize: "1rem",
-            letterSpacing: "0.05em",
-            textDecoration: "none",
-            border: "2px solid transparent",
-          }}
-        >
-          NOTIFY ME
-        </a>
-      </div>
-    </main>
+      <Testimonials testimonials={testimonials} />
+
+      <GalleryGrid items={gallery} />
+
+      <Section variant="gradient">
+        <Container>
+          <div className="max-w-3xl mx-auto text-center">
+            <SectionReveal delay={0}>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-6 font-heading">
+                Ready to Join Our Community?
+              </h2>
+            </SectionReveal>
+            <SectionReveal delay={100}>
+              <p className="text-lg text-black/90 mb-10">
+                Be part of our 2026 conference and connect with educators committed to
+                justice-oriented teaching.
+              </p>
+            </SectionReveal>
+            <SectionReveal delay={200}>
+              <PillButton href="/conference/2026" variant="primary" className="text-lg px-12 py-4">
+                Register for Conference 2026
+              </PillButton>
+            </SectionReveal>
+          </div>
+        </Container>
+      </Section>
+    </div>
   );
 }

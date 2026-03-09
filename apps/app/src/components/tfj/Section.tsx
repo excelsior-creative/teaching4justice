@@ -10,7 +10,7 @@ export const Section = ({
 }: {
   children: React.ReactNode;
   className?: string;
-  variant?: "default" | "gradient" | "muted" | "dot-grid" | "mesh";
+  variant?: "default" | "gradient" | "muted" | "dot-grid" | "mesh" | "grain";
   divider?: "none" | "top" | "bottom" | "both";
   dividerVariant?: "default" | "dark";
 }) => {
@@ -20,6 +20,7 @@ export const Section = ({
     muted: "bg-muted/30",
     "dot-grid": "bg-dot-pattern bg-background",
     mesh: "bg-gradient-sunset-subtle grain-overlay bg-background",
+    grain: "bg-muted/30 grain-overlay",
   };
 
   const dividerTop = null;

@@ -36,7 +36,7 @@ export const TimelineVertical = ({ entries }: { entries: TimelineEntry[] }) => {
                 >
                   <div className="absolute left-0 md:left-1/2 w-8 h-8 rounded-full bg-t4j-orange border-4 border-white -ml-4 md:-ml-4 shadow-card z-10 animate-pulse-soft" />
 
-                  <div className="md:w-5/12 mb-4 md:mb-0">
+                  <div className="md:w-8/12 mb-4 md:mb-0">
                     <Card>
                       <span className="inline-block px-3 py-1 rounded-full text-sm font-bold text-white bg-gradient-sunset mb-2 shadow-button">
                         {entry.year}
@@ -50,7 +50,7 @@ export const TimelineVertical = ({ entries }: { entries: TimelineEntry[] }) => {
                     </Card>
                   </div>
 
-                  <div className="md:w-1/12 hidden md:block" />
+                  <div className="md:w-4/12 hidden md:block" />
 
                   <div className="md:w-5/12 hidden md:block" />
                 </div>

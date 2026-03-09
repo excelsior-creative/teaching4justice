@@ -40,7 +40,7 @@ export default function Conference2026() {
   return (
     <div className="flex flex-col">
       <Section className="bg-gradient-conference-hero text-white relative overflow-hidden animate-gradient-shift">
-        <Container className="relative z-10 py-20 md:py-32">
+        <Container className="relative z-10 py-12 md:py-16">
           <div className="max-w-4xl mx-auto text-center">
             <SectionReveal delay={0}>
               <div className="inline-block px-4 py-1.5 rounded-full text-sm font-bold bg-white/20 mb-6 backdrop-blur-sm shadow-button">
@@ -98,7 +98,7 @@ export default function Conference2026() {
         <RegistrationCard info={registration} />
       </div>
 
-      <Section variant="muted">
+      <Section variant="grain" divider="none">
         <Container>
           <SectionHeading subtitle="Get in Touch">Contact Us</SectionHeading>
           <div className="max-w-2xl mx-auto text-center">

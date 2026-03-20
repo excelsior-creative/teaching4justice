@@ -31,7 +31,7 @@ export default function Home() {
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/hero-background.jpg')" }}
+          style={{ backgroundImage: "url('https://replicate.delivery/xezq/DJomyCmGyYpJOBk8ke3cvdfCBWPQfC2tx3n5nWqsRepZ8eUyC/tmp47e45qb4.jpeg')" }}
         />
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-black/50" />

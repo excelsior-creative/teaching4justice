@@ -2,6 +2,7 @@ export interface HeroSection {
   tagline: string;
   ctaText: string;
   ctaLink: string;
+  backgroundImageUrl: string;
 }
 
 export interface StorySection {
@@ -56,6 +57,8 @@ export const homeContent: HomePageContent = {
     tagline: "Empowering educators to build a more equitable world.",
     ctaText: "Register for 2026 Conference",
     ctaLink: "/conference/2026",
+    backgroundImageUrl:
+      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=2400&q=80",
   },
   story: {
     paragraphs: [
